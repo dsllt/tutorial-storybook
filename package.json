@@ -7,7 +7,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "storybook": "adb reverse tcp:7007 tcp:7007 | start-storybook -p 7007 | react-native start --projectRoot storybook --watchFolders $PWD",
+    "build-storybook": "build-storybook"
   },
   "jest": {
     "preset": "jest-expo"
@@ -17,6 +19,7 @@
     "@react-navigation/bottom-tabs": "^6.0.5",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
+    "@storybook/addon-ondevice-notes": "^5.3.26",
     "expo": "~46.0.19",
     "expo-asset": "~8.6.3",
     "expo-constants": "~13.2.4",
@@ -35,8 +38,17 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@storybook/addon-actions": "^5.3",
+    "@storybook/addon-knobs": "^5.3",
+    "@storybook/addon-links": "^5.3",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-ondevice-backgrounds": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.26",
+    "@storybook/react-native": "^5.3.27",
+    "@storybook/react-native-server": "^5.3.23",
     "@types/react": "~18.0.14",
     "@types/react-native": "~0.69.1",
+    "babel-loader": "^8.3.0",
     "jest": "^26.6.3",
     "jest-expo": "~44.0.1",
     "react-test-renderer": "18.0.0",
